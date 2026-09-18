@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zeets Deets Overlays</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="dashboard">
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">ZD</div>
+      <div>
+        <div class="brand-name">ZEETS DEETS</div>
+        <div class="brand-sub">OVERLAYS</div>
+      </div>
+    </div>
+    <div class="status"><span class="dot"></span> OVERLAY SYSTEM ONLINE</div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-title">CREATOR HUB</div>
+      <button class="nav active">◈ Dashboard</button>
+      <button class="nav">▣ My Overlays</button>
+      <button class="nav">⚙ Settings</button>
+      <div class="side-bottom">
+        <div class="mini-card">
+          <div class="mini-label">LIVE SOURCE</div>
+          <div class="mini-value" id="liveSource">Not connected</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">TIKTOK LIVE • CREATOR TOOLS</div>
+          <h1>BUILD YOUR<br><span>LIVE OVERLAY.</span></h1>
+          <p>Turn your TikTok LIVE into an interactive gamer stream.</p>
+        </div>
+        <div class="hero-badge">
+          <div class="big-dot"></div>
+          <div><b>READY TO STREAM</b><small>Copy your overlay URL into TikTok LIVE Studio.</small></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel game-panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">GAME MODULE 01</div>
+              <h2>GUESS THE NUMBER</h2>
+            </div>
+            <label class="switch">
+              <input id="enabled" type="checkbox" checked>
+              <span></span>
+            </label>
+          </div>
+
+          <div class="preview">
+            <div class="preview-title">GUESS THAT NUMBER</div>
+            <div class="preview-number" id="previewNumber">???</div>
+            <div class="preview-hint">TYPE YOUR GUESS IN THE LIVE CHAT</div>
+            <div class="preview-winner hidden" id="previewWinner">🎉 <span id="previewWinnerName">@winner</span> GUESSED IT!</div>
+          </div>
+
+          <div class="controls">
+            <div class="field"><label>MIN</label><input id="min" type="number" value="1"></div>
+            <div class="field"><label>MAX</label><input id="max" type="number" value="100"></div>
+            <div class="field"><label>SECRET NUMBER</label><input id="secret" type="number" value="42"></div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" id="newRound">START NEW ROUND</button>
+            <button class="secondary" id="test">TEST WINNER</button>
+          </div>
+        </div>
+
+        <div class="panel url-panel">
+          <div class="eyebrow">STREAM CONNECTION</div>
+          <h2>YOUR OVERLAY URL</h2>
+          <p>Paste this into TikTok LIVE Studio as a Browser Source / Web source.</p>
+          <div class="url-box"><span id="overlayUrl">Loading…</span><button id="copy">COPY</button></div>
+          <div class="steps">
+            <div><b>01</b><span>Copy the URL</span></div>
+            <div><b>02</b><span>Add Browser Source in TikTok LIVE Studio</span></div>
+            <div><b>03</b><span>Set it to 1920 × 1080</span></div>
+          </div>
+          <a class="open" id="openOverlay" href="/overlay" target="_blank">OPEN OVERLAY ↗</a>
+        </div>
+
+        <div class="panel activity-panel">
+          <div class="panel-head"><div><div class="eyebrow">LIVE ACTIVITY</div><h2>CHAT GUESSES</h2></div><span class="live-pill">LIVE</span></div>
+          <div id="activity" class="activity"><div class="empty">Waiting for TikTok chat…</div></div>
+        </div>
+
+        <div class="panel tips-panel">
+          <div class="eyebrow">OVERLAY STATUS</div>
+          <div class="status-row"><span>Guess game</span><b id="gameStatus">ON</b></div>
+          <div class="status-row"><span>Realtime sync</span><b class="good">CONNECTED</b></div>
+          <div class="status-row"><span>Transparent background</span><b class="good">READY</b></div>
+          <div class="tip">Tip: Keep the overlay browser source above your gameplay layer so the game stays visible underneath.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/dashboard.js"></script>
+</body>
+</html>

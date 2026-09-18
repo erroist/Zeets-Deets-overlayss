@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zeets Deets Overlay</title>
+  <link rel="stylesheet" href="/overlay.css">
+</head>
+<body>
+  <div class="overlay">
+    <div class="top">
+      <div class="logo">ZEETS DEETS <span>OVERLAYS</span></div>
+      <div class="game-label">GUESS THE NUMBER</div>
+    </div>
+
+    <div class="center">
+      <div class="title">GUESS THAT NUMBER</div>
+      <div class="number" id="number">???</div>
+      <div class="hint" id="hint">TYPE YOUR GUESS IN THE LIVE CHAT</div>
+    </div>
+
+    <div class="winner hidden" id="winner">
+      <div class="icon">✓</div>
+      <div><strong id="winnerName">@viewer</strong><span>GUESSED THE NUMBER!</span></div>
+      <div class="win-number" id="winnerNumber">42</div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/overlay.js"></script>
+</body>
+</html>

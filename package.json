@@ -1,0 +1,12 @@
+{
+  "name": "zeets-deets-overlays",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zeets Deets Overlays - gamer overlay dashboard with Guess the Number",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "tiktok-live-connector": "^2.1.0"
+  }
+}
